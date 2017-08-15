@@ -36,7 +36,7 @@ class App extends Component {
         {
           id: 6,
           url: 'gifs/5.gif',
-          tags: ['iPhone 8', 'Retrofuturism', 'VCR', 'Cellphone']
+          tags: ['iPhone 8', 'Retrofuturism', 'Turning', 'VCR', 'Cellphone']
         },
         {
           id: 7,

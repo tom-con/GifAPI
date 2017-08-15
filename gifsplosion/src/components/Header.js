@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Controls from './Controls';
 
 class Header extends Component {
   render() {
@@ -11,7 +10,6 @@ class Header extends Component {
             <span className="head-second head-large">SPLOSION</span>
           </h3>
         </header>
-        <Controls/>
       </div>
     );
   }

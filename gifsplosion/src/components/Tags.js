@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const Tags = (props) => {
   const tagList = props.tags.map((tagWord) => {
     return (
-        <div className="chip">
+        <div key={tagWord} className="chip">
           {tagWord}
           <span className="gobtn">
             <span className="glyphicon glyphicon-chevron-right"></span>
