@@ -24,6 +24,21 @@ body {
     line-height: 40px;
 }
 
+/* Custom header fonts and sizes */
+
+.head-first {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.head-second {
+  font-family: 'Zilla Slab Highlight', cursive;
+}
+
+.head-large {
+  font-size: 3em;
+}
+
+
 /* Custom page footer */
 .footer {
     padding-top: 19px;
