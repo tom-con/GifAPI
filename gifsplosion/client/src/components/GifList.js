@@ -23,6 +23,10 @@ class GifList extends Component {
     }
   }
 
+  renderContent(){
+
+  }
+
   render() {
     return (
       <div className="container">

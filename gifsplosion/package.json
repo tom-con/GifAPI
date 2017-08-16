@@ -6,7 +6,10 @@
     "express": "^4.15.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-scripts": "1.0.11"
+    "react-scripts": "1.0.11",
+    "morgan": "~1.7.0",
+    "cookie-parser": "~1.4.3",
+    "body-parser": "~1.16.0"
   },
   "scripts": {
     "start": "react-scripts start",

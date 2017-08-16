@@ -6,7 +6,7 @@ class Header extends Component {
       <div className="container">
         <header className="header">
           <h3 className="text-center">
-            <span className="head-first head-large">gif</span>
+            <span className="head-first head-large">.gif</span>
             <span className="head-second head-large">SPLOSION</span>
           </h3>
         </header>
