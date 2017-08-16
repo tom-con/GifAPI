@@ -57,4 +57,4 @@
     },
   ]
 
-  export default gifs;
+  module.exports = {gifs : gifs};
