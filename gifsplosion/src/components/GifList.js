@@ -15,7 +15,7 @@ class GifList extends Component {
   getGifs(selection) {
     fetch(`/api/gifs/` + (selection === "all"
       ? ''
-      : 'random')).then(res => res.json()).then(gifs => {
+      : selection)).then(res => res.json()).then(gifs => {
       this.setState({
         displayGifs: gifs.map((gif) => {
           return <Gif key={gif.id} gif={gif}/>;
