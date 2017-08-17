@@ -33,7 +33,7 @@ class Controls extends Component {
                     Random
                   </a>
                 </div>
-                <label>Search: <input className="form-control" type="text" onChange={event => this.onInputChange(event.target.value)}/></label><a onClick={() => this.props.controlHandler(this.state.searchTerm)} className="btn btn-default">Go!</a>
+                <input id="search-bar" className="form-control" type="text" onChange={event => this.onInputChange(event.target.value)}/><a onClick={() => this.props.controlHandler(this.state.searchTerm)} className="btn btn-default">Search</a>
               </div>
             </div>
           </div>

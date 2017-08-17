@@ -74,6 +74,10 @@ body {
 
 }
 
+.hidden-gif {
+  display:none;
+}
+
 .gif-entry img {
   width: 100%;
   height: auto;
