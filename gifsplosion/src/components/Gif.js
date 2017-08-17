@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-// import Tags from './Tags';
 
 class Gif extends Component {
   constructor(props) {

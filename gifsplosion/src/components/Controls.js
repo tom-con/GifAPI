@@ -20,15 +20,15 @@ class Controls extends Component {
             <div className="row">
               <div className="col-sm-12">
                 <div className="btn-group btn-group-justified">
-                  <a onClick={() => this.props.controlHandler("best")} className="btn btn-default">
+                  <a onClick={() => this.props.controlHandler("best")} className={this.props.thisPage === "best" ? "btn btn-primary" : "btn btn-default"}>
                     <span className="glyphicon glyphicon-thumbs-up"></span>&nbsp;
                     Best
                   </a>
-                  <a onClick={() => this.props.controlHandler("all")} className="btn btn-default">
+                  <a onClick={() => this.props.controlHandler("all")} className={this.props.thisPage === "all" ? "btn btn-primary" : "btn btn-default"}>
                     <span className="glyphicon glyphicon-fire"></span>&nbsp;
                     Trending
                   </a>
-                  <a onClick={() => this.props.controlHandler("random")} className="btn btn-primary">
+                  <a onClick={() => this.props.controlHandler("random")} className={this.props.thisPage === "random" ? "btn btn-primary" : "btn btn-default"}>
                     <span className="glyphicon glyphicon-random"></span>&nbsp;
                     Random
                   </a>

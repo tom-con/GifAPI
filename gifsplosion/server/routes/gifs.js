@@ -5,8 +5,8 @@ const gifs = require('../api/gifsData')
 
 /* GET home page. */
 
-router.get('/', function(req, res, next) {
-  request( `http://api.giphy.com/v1/gifs/trending?api_key=${process.env.API_KEY}&limit=10`,
+router.get('/all/:offset', function(req, res, next) {
+  request( `http://api.giphy.com/v1/gifs/trending?api_key=${process.env.API_KEY}&limit=10&offset=${req.params.offset}`,
     function(error, response, body) {
       if (!error && response.statusCode === 200) {
         let gifs = JSON.parse(body).data;
@@ -32,8 +32,8 @@ router.get('/random', function(req, res, next) {
   )
 })
 
-router.get('/:search', function(req, res, next) {
-  request( `http://api.giphy.com/v1/gifs/search?q=${req.params.search}&api_key=${process.env.API_KEY}&limit=10`,
+router.get('/:search/:offset', function(req, res, next) {
+  request( `http://api.giphy.com/v1/gifs/search?q=${req.params.search}&api_key=${process.env.API_KEY}&limit=10&offset=${req.params.offset}`,
     function(error, response, body) {
       if (!error && response.statusCode === 200) {
         let gifs = JSON.parse(body).data;

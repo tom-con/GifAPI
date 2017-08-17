@@ -46,6 +46,11 @@ body {
 }
 
 
+/* Hide pagination on certain pages */
+.pager-hide {
+  display: none;
+}
+
 /* Custom page footer */
 
 .footer {
