@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import _ from 'lodash';
 
-
+// Pager controls the behavior of the pagination component. It will update whenever the getGifs() function is called so that the source of truth is at the highest possible level
 
 class Pager extends Component {
     constructor(props) {
@@ -16,6 +16,8 @@ class Pager extends Component {
           prev: this.props.page
          };
     }
+
+    // setPager is designed to ensure that the correct options for pagination are allowed 
 
     setPager(){
       if(this.props.page === 2){

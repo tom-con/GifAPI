@@ -18,7 +18,7 @@ class Controls extends Component {
         <div className="col-md-12">
           <div className="well">
             <div className="row">
-              <div className="col-sm-12">
+              <div className="col-md-12 col-sm-4/">
                 <div className="btn-group btn-group-justified">
                   <a onClick={() => this.props.controlHandler("best")} className={this.props.thisPage === "best" ? "btn btn-primary" : "btn btn-default"}>
                     <span className="glyphicon glyphicon-thumbs-up"></span>&nbsp;
@@ -33,7 +33,7 @@ class Controls extends Component {
                     Random
                   </a>
                 </div>
-                <input id="search-bar" className="form-control" type="text" onChange={event => this.onInputChange(event.target.value)}/><a onClick={() => this.props.controlHandler(this.state.searchTerm)} className="btn btn-default">Search</a>
+                <input id="search-bar" className="form-control" type="text" onChange={event => this.onInputChange(event.target.value)}/><button onClick={() => this.props.controlHandler(this.state.searchTerm)} className=" float-right btn btn-default">Search</button>
               </div>
             </div>
           </div>
