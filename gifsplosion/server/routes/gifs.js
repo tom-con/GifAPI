@@ -8,8 +8,8 @@ router.get('/', function(req, res, next) {
   res.send(gifs)
 });
 
-router.get('/:query', function(req,res,next) {
-  res.send(req.params.query);
+router.get('/random', function(req,res,next) {
+  res.send([gifs[Math.floor(Math.random() * gifs.length)]]);
 })
 
 module.exports = router;

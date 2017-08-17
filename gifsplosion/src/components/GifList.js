@@ -3,28 +3,29 @@ import Controls from './Controls';
 import Gif from './Gif';
 
 class GifList extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = {
-      gifs: props.gifs.map((gif) => {
-        return <Gif key={gif.id} gif={gif}/>;
-      }),
-      displayGifs: props.gifs.map((gif) => {
-        return <Gif key={gif.id} gif={gif}/>;
+    this.state = {displayGifs: null}
+  }
+
+  componentDidMount(){
+    this.getGifs("all")
+  }
+
+  getGifs(selection) {
+    fetch(`/api/gifs/` + (selection === "all"
+      ? ''
+      : 'random')).then(res => res.json()).then(gifs => {
+      this.setState({
+        displayGifs: gifs.map((gif) => {
+          return <Gif key={gif.id} gif={gif}/>;
+        })
       })
-    }
+    })
   }
 
   controlHandler(selection) {
-    if(selection === 1){
-      this.setState({displayGifs: this.state.gifs})
-    } else if(selection === 0){
-      this.setState({displayGifs: this.state.gifs[Math.floor(Math.random() * this.state.gifs.length)]})
-    }
-  }
-
-  renderContent(){
-
+    this.getGifs(selection)
   }
 
   render() {

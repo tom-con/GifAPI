@@ -57,4 +57,4 @@
     },
   ]
 
-  module.exports = {gifs : gifs};
+  module.exports =  gifs;
