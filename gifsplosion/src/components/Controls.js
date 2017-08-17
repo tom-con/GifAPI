@@ -3,7 +3,15 @@ import React, { Component } from 'react';
 class Controls extends Component {
   constructor(props){
     super(props);
+    this.state = {
+      searchTerm: ''
+    }
   }
+
+  onInputChange(searchTerm) {
+    this.setState({searchTerm})
+  }
+
   render() {
     return (
       <div className="row">
@@ -25,6 +33,7 @@ class Controls extends Component {
                     Random
                   </a>
                 </div>
+                <label>Search: <input className="form-control" type="text" onChange={event => this.onInputChange(event.target.value)}/></label><a onClick={() => this.props.controlHandler(this.state.searchTerm)} className="btn btn-default">Go!</a>
               </div>
             </div>
           </div>

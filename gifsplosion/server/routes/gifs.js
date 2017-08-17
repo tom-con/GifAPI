@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
     function(error, response, body) {
       if (!error && response.statusCode === 200) {
         let gifs = JSON.parse(body).data;
-        gifs.map(gif => ({id: gif.id, url: gif.images.original.url}))
+        gifs = gifs.map(gif => ({id: gif.id, url: gif.images.original.url}))
         res.send(gifs);
       }
     }
@@ -26,7 +26,6 @@ router.get('/random', function(req, res, next) {
     function(error, response, body) {
       if (!error && response.statusCode === 200) {
         let gif = JSON.parse(body).data;
-        console.log("Getting from random",gif);
         res.send([{id: gif.id, url: gif.image_original_url}]);
       }
     }
@@ -34,11 +33,12 @@ router.get('/random', function(req, res, next) {
 })
 
 router.get('/:search', function(req, res, next) {
-  request( `http://api.giphy.com/v1/gifs/search?q=${req.body.params}api_key=${process.env.API_KEY}&limit=10`,
+  request( `http://api.giphy.com/v1/gifs/search?q=${req.params.search}&api_key=${process.env.API_KEY}&limit=10`,
     function(error, response, body) {
       if (!error && response.statusCode === 200) {
         let gifs = JSON.parse(body).data;
-        gifs.map(gif => ({id: gif.id, url: gif.images.original.url}))
+        console.log(gifs);
+        gifs = gifs.map(gif => ({id: gif.id, url: gif.images.original.url}))
         res.send(gifs);
       }
     }

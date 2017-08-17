@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
 const app = express();
 
 // dotenv to keep API keys secret
@@ -11,6 +12,9 @@ const gifs = require('./routes/gifs');
 
 // Sets up a logger for the server to see incoming REQ and outoging RES in high detail for server admin
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
+
+// Allows API requests to be in the form of parameters
+app.use(bodyParser.json());
 
 // Serves from a static build of the react front-end
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
