@@ -7,6 +7,8 @@ import {
 
 import App from './App';
 
+
+// Encasing the app in Router so that endpoints match RESTful standards
 const Routes = (props) => (
   <Router {...props}>
     <div>
